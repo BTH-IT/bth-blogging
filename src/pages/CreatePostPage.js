@@ -19,7 +19,7 @@ import { db } from "../firebase/firebase-config";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../contexts/auth-context";
-import { STATUS_POST } from "../utils/contains";
+import { ROLE_USER, STATUS_POST } from "../utils/contains";
 import useUploadFile from "../hooks/useUploadFile";
 import ReactQuillEditor from "../components/editor/ReactQuillEditor";
 import { debounce } from "lodash";
@@ -52,7 +52,7 @@ const CreatePostPage = () => {
     document.title = "Create a new post";
   }, []);
   const navigate = useNavigate();
-  const { userInfo } = useAuth();
+  const { userInfo, user } = useAuth();
   const [categories, setCategories] = useState([]);
   const [content, setContent] = useState("");
   const [search, setSearch] = useState("");
@@ -182,6 +182,11 @@ const CreatePostPage = () => {
 
   if (!userInfo) {
     navigate("/");
+    return;
+  }
+
+  if (user.role === ROLE_USER.BAN) {
+    navigate("/manage-posts");
     return;
   }
 

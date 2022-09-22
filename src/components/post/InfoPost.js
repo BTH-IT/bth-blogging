@@ -9,7 +9,7 @@ const InfoPost = ({
   return (
     <div className="absolute inset-0 w-full h-full p-4">
       <div className="flex justify-between mb-4">
-        <div className="grid grid-cols-3 gap-1">
+        <div className="flex flex-wrap gap-1">
           {categories.length > 0 &&
             categories.map((category) => (
               <span

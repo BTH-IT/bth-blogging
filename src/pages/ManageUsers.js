@@ -8,7 +8,7 @@ import {
 import moment from "moment";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Modal from "../components/modal/Modal";
 import ModalContent from "../components/modal/ModalContent";
@@ -17,6 +17,7 @@ import User from "../components/user/User";
 import { useAuth } from "../contexts/auth-context";
 import { db } from "../firebase/firebase-config";
 import { ROLE_USER } from "../utils/contains";
+import { Auth, getAuth } from "firebase/auth";
 
 const ManageUsers = () => {
   useEffect(() => {
@@ -53,12 +54,9 @@ const ManageUsers = () => {
 
   const handleDelete = async (e) => {
     if (e.target.getAttribute("data-value").toLowerCase() === "yes") {
-      try {
-        await deleteDoc(doc(db, "users", idSelect));
-        toast.success("Delete user successfull!!!");
-      } catch (error) {
-        toast.error(error.message);
-      }
+      toast.warning(
+        "This feature can't work yet due to firebase limitation!!!"
+      );
     }
     setShowRemove(false);
   };
