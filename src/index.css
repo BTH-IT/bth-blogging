@@ -1,13 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
+
+td, th {
+  @apply text-center
+}
+
+td {
+  @apply my-2
+}
+
+.input-check {
+  display: none;
+}
+
+input:checked ~ .label-radio .input-check {
+  display: block;
+}
+
+.hovered-post:hover > div img {
+  transform: scale(1.5);
+}
+
+.hovered-post:hover > div .overlay {
+  opacity: 0.2;
+}
+
+.nav_dashboard {
+  @apply px-5 py-3 font-medium text-center text-gray-400 transition-all cursor-pointer;
+}
+
+.nav_dashboard.active {
+  @apply text-green-400;
+}
+
