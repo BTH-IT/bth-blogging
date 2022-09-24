@@ -14,7 +14,7 @@ const NavProfile = ({ user }) => {
           className="object-cover w-full h-full rounded-full"
         />
       </div>
-      <h1 className="flex items-center ml-2 text-sm text-green-500 lg:ml-4 lg:text-lg">
+      <h1 className="flex items-center ml-2 text-xs text-green-500 sm:text-sm md:text-base lg:ml-4 lg:text-lg">
         {user.displayName}
       </h1>
     </Link>

@@ -5,7 +5,7 @@ const Logo = ({ children = "Hung Blogging", className }) => {
   return (
     <Link
       to="/"
-      className={`${className} block text-xl md:text-2xl 2xl:text-3xl font-semibold text-green-500`}
+      className={`${className} block text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-semibold text-green-500`}
     >
       {children}
     </Link>

@@ -24,9 +24,9 @@ const PostDetailPage = () => {
         ) : (
           <Link
             to="/create-post"
-            className="w-full p-2 mr-4 text-sm text-center text-green-500 transition-all bg-white border border-green-500 rounded-3xl text-md hover:bg-green-500 hover:text-white"
+            className="w-full p-1 mr-2 text-xs text-center text-green-500 transition-all bg-white border border-green-500 rounded-3xl hover:bg-green-500 hover:text-white"
           >
-            Create a post
+            Create post
           </Link>
         )}
       </NavManage>
