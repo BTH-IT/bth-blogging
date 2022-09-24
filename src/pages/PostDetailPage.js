@@ -24,7 +24,7 @@ const PostDetailPage = () => {
         ) : (
           <Link
             to="/create-post"
-            className="w-full p-1 mr-2 text-xs text-center text-green-500 transition-all bg-white border border-green-500 rounded-3xl hover:bg-green-500 hover:text-white"
+            className="w-full p-1 mr-2 text-xs text-center text-green-500 transition-all bg-white border border-green-500 sm:p-2 sm:mr-4 sm:text-sm rounded-3xl hover:bg-green-500 hover:text-white"
           >
             Create post
           </Link>
