@@ -24,6 +24,7 @@ const schema = yup.object({
 
 const ProfilePage = () => {
   const { userInfo, user } = useAuth();
+  console.log(userInfo);
   useEffect(() => {
     document.title = "Profile";
   }, []);

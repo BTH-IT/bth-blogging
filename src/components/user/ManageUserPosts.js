@@ -33,14 +33,16 @@ const ManageUserPosts = () => {
       </NavManage>
 
       <PostManageList></PostManageList>
-      <div className="text-center">
-        <Link
-          to="/create-post"
-          className="inline-block p-3 mx-auto mt-10 font-semibold text-green-500 transition-all border border-green-300 rounded-lg cursor-pointer sm:hidden hover:text-white hover:bg-green-500"
-        >
-          Create a post
-        </Link>
-      </div>
+      {user.role !== ROLE_USER.BAN && (
+        <div className="text-center">
+          <Link
+            to="/create-post"
+            className="inline-block p-3 mx-auto mt-10 font-semibold text-green-500 transition-all border border-green-300 rounded-lg cursor-pointer sm:hidden hover:text-white hover:bg-green-500"
+          >
+            Create a post
+          </Link>
+        </div>
+      )}
     </>
   );
 };
